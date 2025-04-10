@@ -17,10 +17,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from rest_framework.authtoken.views import obtain_auth_token
+from api.views import UserCreateView, UserDetailView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('api.urls')),
-    path('api/token/', obtain_auth_token), # GENERATING TOKEN
+    # path('api/token/', obtain_auth_token), # GENERATING TOKEN
+    path('login/', obtain_auth_token), # GENERATING TOKEN
+    path('register/', UserCreateView.as_view(), name='user-register'),
+    path('me/', UserDetailView.as_view(), name='user-detail'),
 
 ]
