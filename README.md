@@ -3,6 +3,7 @@ A RESTful API built with Django and Django REST Framework to help users track an
 
 
 📌 Features
+
 🔐 User Authentication (login/register using DRF's TokenAuth or JWT)
 
 📋 Activity Management:
